@@ -1,0 +1,156 @@
+body {
+    z-index: -2;
+    background-color: gray;
+    background-image: url('https://maps.googleapis.com/maps/api/staticmap?center=La+Jolla&zoom=10&size=2048x1152&maptype=roadmap&key=AIzaSyCGCKZWjbJ7E1cgRiD5r748YZvDtFkLaLY');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.decline{
+  color: black;
+  background-color: white;
+  border: 1px solid #8f78bd;
+}
+
+#overlay {
+    z-index: -1;
+    background-color: black;
+    opacity: 0.5;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.trip {
+  margin-top: 25px;
+}
+
+.info {
+  overflow: hidden;
+  padding: 15px;
+  margin: 0px auto;
+  width: 75%;
+  background-color: white;
+  border-radius: 3px 3px 0 0;
+  border: 1px solid #8e77bc;
+}
+
+.info button {
+  margin-top: 20px;
+  margin-right: 10px;
+  float: right;
+}
+
+.info::after {
+  clear: right;
+}
+
+.info form::after {
+  clear: right;
+}
+
+.chat {
+  overflow-y: scroll;
+  overflow-x: none;
+  height: 100px;
+  padding: 15px;
+  margin: 0px auto;
+  width: 75%;
+  background-color: lightgrey;
+  border: 1px solid #8e77bc;
+}
+
+.chatbar {
+  display: flex;
+  margin: 0px auto;
+  width: 75%;
+  background-color: white;
+  border: 1px solid #8e77bc;
+  border-radius: 0 0 3px 3px;
+  overflow: hidden;
+}
+
+.chatbar::after {
+  clear:left;
+}
+
+.chatbar input {
+  flex: 2;
+  height: auto;
+  margin: 0;
+  border: 0;
+}
+
+.chatbar button {
+  padding: 5px;
+  height: auto;
+  float: right;
+}
+
+.chevron {
+  margin: 10px;
+  font-size: 1.3em;
+  display: inline-block;
+}
+
+.depart {
+  font-size: 30px;
+  font-weight: 700;
+  text-transform: uppercase;
+  display: inline-block;
+}
+
+.dest {
+  font-size: 30px;
+  font-weight: 700;
+  text-transform: uppercase;
+  display: inline-block;
+}
+
+.date {
+  display: block;
+  float: right;
+}
+
+.status {
+  clear: both;
+  display: block;
+  float: right;
+  width: 50%;
+  text-align: right;
+}
+
+.buttons::after {
+  clear:left;
+}
+
+.show button {
+  float: right;
+  width: auto;
+}
+
+.swal-button-container button {
+  float: right;
+  background-color: #33235f;
+}
+
+@media screen and (max-width: 768px) {
+  .info {
+    width: 90%;
+  }
+
+  .chat {
+    width: 90%;
+  }
+
+  .chatbar {
+    width: 90%;
+  }
+
+  .chatbar input {
+    width: auto;
+  }
+}

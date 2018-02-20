@@ -1,0 +1,19 @@
+body {
+    z-index: -2;
+    background-color: gray;
+    background-image: url('https://maps.googleapis.com/maps/api/staticmap?center=La+Jolla&zoom=10&size=2048x1152&maptype=roadmap&key=AIzaSyCGCKZWjbJ7E1cgRiD5r748YZvDtFkLaLY');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+#wait{
+    margin-left: 60px;
+    font-size: 25px;
+}
+
+#endtrip {
+    margin-top: 200px;
+    margin-right: 150px;
+    text-align: right;
+}

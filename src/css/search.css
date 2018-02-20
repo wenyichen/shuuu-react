@@ -1,0 +1,97 @@
+body {
+  font-family: 'Muli', sans-serif;
+}
+
+body {
+  z-index: -2;
+  background-color: gray;
+  background-image: url('https://maps.googleapis.com/maps/api/staticmap?center=La+Jolla&zoom=10&size=2048x1152&maptype=roadmap&key=AIzaSyCGCKZWjbJ7E1cgRiD5r748YZvDtFkLaLY');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.decline{
+  color: black;
+  background-color: white;
+  border: 1px solid #8f78bc;
+}
+
+.result {
+  overflow: hidden;
+  width: 80%;
+  padding: 20px;
+  margin: 10px auto;
+  background-color: white;
+  border: 1px solid #604c8d;
+  border-radius: 3px;
+}
+
+.result button {
+  margin-top: 20px;
+  margin-right: 10px;
+  float: right;
+}
+
+.result:hover{
+  cursor: pointer;
+  color: white;
+  background-color: #8f78bd;
+}
+
+.result::after {
+  clear: right;
+}
+
+.result form::after {
+  clear: right;
+}
+
+.chevron {
+  margin: 10px;
+  font-size: 1.3em;
+  display: inline-block;
+}
+
+.depart {
+  font-size: 30px;
+  font-weight: 700;
+  text-transform: uppercase;
+  display: inline-block;
+}
+
+.dest {
+  font-size: 30px;
+  font-weight: 700;
+  text-transform: uppercase;
+  display: inline-block;
+}
+
+.date {
+  display: block;
+  float: right;
+}
+
+.status {
+  clear: both;
+  display: block;
+}
+
+#bar2 {
+  padding-top: 10px;
+  color: white;
+  text-align: center;
+  background-color: #604c8d;
+  height: 50px;
+  top: 0;
+}
+
+#bar2 h4 {
+  margin: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .result {
+    width: 90%;
+  }
+}

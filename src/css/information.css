@@ -1,0 +1,143 @@
+body {
+    z-index: -2;
+    background-color: gray;
+    background-image: url('https://maps.googleapis.com/maps/api/staticmap?center=La+Jolla&zoom=10&size=2048x1152&maptype=roadmap&key=AIzaSyCGCKZWjbJ7E1cgRiD5r748YZvDtFkLaLY');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+#bar {
+    z-index: 2;
+}
+
+#overlay {
+    z-index: -1;
+    background-color: black;
+    opacity: 0.5;
+    position: fixed;
+    top: 0; 
+    left: 0; 
+    width: 100%;
+    height: 100%;
+}
+
+#info-form {
+    font-size: 15px;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+#info-form input {
+    font-size: 14px;
+    float: left;
+    clear: both;
+    margin-top: 2px;
+}
+
+#info-form label {
+    font-size: 13px;
+    text-transform: uppercase;
+    float: left;
+    clear: both;
+}
+
+#info-form::after {
+    clear: right;
+}
+
+.text-input {
+    overflow: hidden;
+    margin-bottom: 10px;
+    padding-right: 20px;
+}
+
+.text-input::after {
+    clear: right;
+}
+
+.date-input {
+    overflow: hidden;
+    margin-bottom: 10px;
+    padding-right: 20px;
+}
+
+.date-input::after {
+    clear: right;
+}
+
+.num-input {
+    overflow: hidden;
+    margin-bottom: 10px;
+    padding-right: 20px;
+}
+
+.num-input::after {
+    clear: right;
+}
+
+.tel-input {
+    overflow: hidden;
+    margin-bottom: 10px;
+    padding-right: 20px;
+}
+
+.tel-input::after {
+    clear: right;
+}
+
+#notes_label {
+    display: block;
+}
+
+.note-input {
+    overflow: hidden;
+    display: block;
+    margin-bottom: 10px;
+    padding-right: 30px;
+}
+
+.note-input textarea {
+    margin-top: 2px;
+    font-size: 14px;
+    width: 100%;
+}
+
+.note-input::after {
+    clear: both;
+}
+
+#info-box {
+    z-index: 2;
+    overflow: hidden;
+    width: 40%;
+    background-color: white;
+}
+
+#continue-button {
+    position: relative;
+    padding-top: 10px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    float: right;
+    bottom: 0px;
+    height: 40px;
+    width: 100px;
+    vertical-align: bottom;
+}
+
+
+li {
+    display: block;
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        background-position: center;
+        background-size: auto 100%;
+    }
+
+    #info-box {
+        width: 90%;
+    }
+}
