@@ -34,6 +34,7 @@ body {
 }
 
 #rider {
+    color: black;
     width: 100%;
     vertical-align: middle;
     height: 100px;
@@ -54,6 +55,7 @@ body {
 }
 
 #driver {
+    color: black;
     width: 100%;
     vertical-align: middle;
     height: 100px;
