@@ -44,19 +44,19 @@ a {
     height: inherit;
 }
 
-#nav li {
+#nav a {
     float: left;
     text-align: center;
     height: inherit;
 }
 
-#nav li:hover {
+#nav a:hover {
     color: white;
     cursor: pointer;
     background-color: #8f78bd;
 }
 
-#nav a {
+#nav li {
     margin-top: 20px;
     text-align: center;
     width: 120px;

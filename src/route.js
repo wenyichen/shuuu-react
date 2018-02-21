@@ -3,6 +3,7 @@ import Start from './Start';
 import Signup from './Signup';
 import Login from './Login';
 import InfoRider from './Info-Rider';
+import InfoDriver from './Info-Driver';
 
 const routes = [{
     path: '/',
@@ -21,8 +22,12 @@ const routes = [{
     component: Login,
 },
 {
-    path: '/info/rider',
+    path: '/info/riders',
     component: InfoRider,
+},
+{
+    path: '/info/drivers',
+    component: InfoDriver,
 }
 ]
 

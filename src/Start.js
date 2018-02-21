@@ -17,12 +17,12 @@ class Start extends Component {
                             <p>I am a:</p>
                         </div>
                         <div id="start-form">
-                            <Link to="/info/rider">
+                            <Link to="/info/riders">
                                 <div id="rider">
                                     <span id="rider-text">Rider</span>
                                 </div>
                             </Link>
-                            <Link to="/info/driver">
+                            <Link to="/info/drivers">
                                 <div id="driver">
                                     <span id="driver-text">Driver</span>
                                 </div>

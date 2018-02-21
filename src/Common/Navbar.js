@@ -24,9 +24,11 @@ class Navbar extends Component {
                 <Title display={this.props.title} />
                 <div id="bar">
                     <div id="nav">
+                        {/* If logged in display My Account/MyTrips
+                        else display Login/Signup */}
                         <ul>
-                            <li><Link to="/account">My Account</Link></li>
-                            <li><Link to="/trips">My Trips</Link></li>
+                            <Link to="/account"><li>My Account</li></Link>
+                            <Link to="/trips"><li>My Trips</li></Link>
                         </ul>
                     </div>
                 </div>
