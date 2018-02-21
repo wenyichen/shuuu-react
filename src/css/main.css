@@ -4,10 +4,13 @@
 }
 
 body {
+    background-image: url('../img/background.jpeg');
+    background-size: 100%;
+    background-repeat: no-repeat;
     margin: 0;
     padding: 0;
     padding-bottom: 50px;
-    background-color: whitesmoke;
+    background-color: #8f78bd;
     font-family: 'Muli', sans-serif;
 }
 
