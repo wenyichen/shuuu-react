@@ -1,6 +1,6 @@
 body {
     z-index: -2;
-    background-color: gray;
+    background-color: lightgrey;
     background-image: url('https://maps.googleapis.com/maps/api/staticmap?center=La+Jolla&zoom=10&size=2048x1152&maptype=roadmap&key=AIzaSyCGCKZWjbJ7E1cgRiD5r748YZvDtFkLaLY');
     background-size: 100%;
     background-repeat: no-repeat;
@@ -26,6 +26,11 @@ body {
     clear: right;
 }
 
+#start-form {
+    display: flex;
+    flex-direction: column;
+}
+
 #start-box {
     z-index: 2;
     overflow: hidden;
@@ -34,31 +39,44 @@ body {
 }
 
 #rider {
+    width: 100%;
     vertical-align: middle;
     height: 100px;
-    padding-top: 15px;
     text-align: center;
     font-size: 32px;
+    display:table;
 }
 
 #rider:hover {
+    display:table-cell;
     cursor: pointer;
     color: white;
     background-color: #8f78bc;
 }
 
+#rider-text {
+    vertical-align: middle;
+    display: table-cell;
+}
+
 #driver {
+    width: 100%;
     vertical-align: middle;
     height: 100px;
-    padding-top: 15px;
     text-align: center;
     font-size: 32px;
+    display:table;
 }
 
 #driver:hover {
     cursor: pointer;
     color: white;
     background-color: #8f78bc;
+}
+
+#driver-text {
+    vertical-align: middle;
+    display: table-cell;
 }
 
 li {

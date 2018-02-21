@@ -1,24 +1,25 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
-import './App.css';
-import './css/main.css';
 import './css/index.css';
+import './css/main.css';
 import Navbar from './Common/Navbar';
 
 class Main extends Component {
     render() {
         return (
             <div>
-                < Navbar />
+                <Navbar title={false}/>
                 <div id="middlebar">
                     <h1>
                         <Link to="/">shuuu</Link>
                     </h1>
                 </div>
                 <div id="start">
-                    <button>
-                        <Link to="/start">Get Started!</Link>
-                    </button>
+                    <Link to="/start">
+                        <button>
+                            Get Started!
+                        </button>
+                    </Link>
                 </div>
             </div>
         );

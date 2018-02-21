@@ -5,6 +5,10 @@ body {
     font-family: 'Muli', sans-serif;
 }
 
+a {
+    text-decoration: none;
+}
+
 #bar::after {
     clear: both;
 }
@@ -82,15 +86,15 @@ body {
 
 button {
     cursor: pointer;
-    border-radius: 3px;
-    font-weight: 300;
     border: 0;
-    color: #FFFFFF;
+    border-radius: 3px;
     background-color: #33235f;
     text-align: center;
     padding: 13px;
-    font-size: 16px;
     width: 130px;
+    font-weight: 300;
+    color: #FFFFFF;
+    font-size: 16px;
 }
 
 #mb-container {
