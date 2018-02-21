@@ -26,11 +26,6 @@ body {
     clear: right;
 }
 
-#start-form {
-    display: flex;
-    flex-direction: column;
-}
-
 #start-box {
     z-index: 2;
     overflow: hidden;
@@ -48,7 +43,6 @@ body {
 }
 
 #rider:hover {
-    display:table-cell;
     cursor: pointer;
     color: white;
     background-color: #8f78bc;
