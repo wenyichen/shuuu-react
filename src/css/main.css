@@ -7,7 +7,6 @@ body {
 
 a {
     text-decoration: none;
-    color:black;
 }
 
 #bar::after {
@@ -15,6 +14,7 @@ a {
 }
 
 #bar {
+    overflow: hidden;
     text-align: center;
     background-color: #33235f;
     height: 70px;
@@ -38,6 +38,7 @@ a {
 }
 
 #nav ul {
+    width: 100%;
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -58,14 +59,19 @@ a {
 }
 
 #nav li {
-    margin-top: 20px;
-    text-align: center;
+    height: 100%;
     width: 120px;
-    display: inline-block;
+    margin: 0 auto;
     font-size: 17px;
     font-weight: 300;
     color: white;
     text-decoration: none;
+    display: table;
+}
+
+#nav span {
+    display: table-cell;
+    vertical-align: middle;
 }
 
 #title {
@@ -137,7 +143,7 @@ button {
     }
 
     #nav {
-        height: inherit;
+        overflow: hidden;
         padding-right: 0;
         width: 100%;
     }
@@ -148,19 +154,17 @@ button {
     }
 
     #nav li {
-        width: 50%;
-        text-align: center;
-        display: block;
-        /*clear: both;*/
         height: 70px;
     }
 
     #nav a {
+        width: 50%;
         padding: 0;
     }
 
     #bar {
         height: auto;
         overflow: auto;
+        width: 100%;
     }
 }

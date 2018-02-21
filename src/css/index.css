@@ -14,10 +14,6 @@ button {
     text-align: center;
 }
 
-#middlebar:hover {
-    padding: 15px;
-}
-
 #middlebar:hover a {
     font-size: 200px;
 }
@@ -29,12 +25,9 @@ button {
     text-decoration:  none;
 }
 
-
 #middlebar {
-    text-align: center;
-    padding: 30px 0px 30px 0px;
     margin-top: 130px;
-    height: auto;
+    height: 300px;
     width: 100%;
     text-align: center;
 }
@@ -44,7 +37,6 @@ label {
 }
 
 #middlebar h1 {
-    margin: 0;
     color: white;
     text-shadow:
     3px 3px  #33235f,
@@ -62,10 +54,6 @@ label {
 
     #middlebar a {
         font-size: 100px;
-    }
-
-    #middlebar:hover {
-        padding: 15px;
     }
     
     #middlebar:hover a {
