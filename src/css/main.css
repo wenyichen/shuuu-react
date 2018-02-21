@@ -1,7 +1,13 @@
+@keyframes button {
+    from {}
+    to {}
+}
+
 body {
     margin: 0;
     padding: 0;
     padding-bottom: 50px;
+    background-color: whitesmoke;
     font-family: 'Muli', sans-serif;
 }
 
@@ -14,6 +20,7 @@ a {
 }
 
 #bar {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     overflow: hidden;
     text-align: center;
     background-color: #33235f;
@@ -27,7 +34,6 @@ a {
 
 #nav {
     float: right;
-    color: white;
     height: inherit;
     padding-right: 60px;
     vertical-align: middle;
@@ -50,12 +56,16 @@ a {
     float: left;
     text-align: center;
     height: inherit;
+    transition: background-color 0.3s;
 }
 
 #nav a:hover {
-    color: white;
     cursor: pointer;
-    background-color: #8f78bd;
+    background-color: #604c8d;
+}
+
+#nav a:hover li {
+    color: white;
 }
 
 #nav li {
@@ -64,7 +74,7 @@ a {
     margin: 0 auto;
     font-size: 17px;
     font-weight: 300;
-    color: white;
+    color: #d1c4e9;
     text-decoration: none;
     display: table;
 }
@@ -92,16 +102,27 @@ a {
 }
 
 button {
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
     cursor: pointer;
     border: 0;
     border-radius: 3px;
-    background-color: #33235f;
+    background-color: #604c8d;
     text-align: center;
     padding: 13px;
     width: 130px;
     font-weight: 300;
     color: #FFFFFF;
     font-size: 16px;
+    transition: transform 0.1s;
+}
+
+button:hover {
+    transform: translateY(-4px);
+}
+
+button:active {
+    background-color: #33235f;
+    transform: translateY(0px);
 }
 
 #mb-container {
@@ -110,18 +131,19 @@ button {
 }
 
 .middlebox {
-    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 3px;
     margin: 0 auto;
     margin-top: 60px;
 }
 
 #middlebox-topbar {
     top: 0;
-    border-radius: 5px 5px 0px 0px;
+    border-radius: 3px 3px 0px 0px;
     vertical-align: top;
     width: 100%;
     overflow: hidden;
-    background-color: #33235f;
+    background-color: #604c8d;
     padding: 10px;
 }
 

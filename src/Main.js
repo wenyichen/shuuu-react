@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
-import './css/index.css';
 import './css/main.css';
+import './css/index.css';
 import Navbar from './Common/Navbar';
 
 class Main extends Component {

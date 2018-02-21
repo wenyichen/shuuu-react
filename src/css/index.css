@@ -1,11 +1,3 @@
-body {
-    z-index: -2;
-    background-color: lightgrey;
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-}
-
 button {
     text-align: center;
 }
@@ -23,6 +15,7 @@ button {
     font-weight: 700;
     font-size: 175px;
     text-decoration:  none;
+    transition: font-size 0.5s;
 }
 
 #middlebar {

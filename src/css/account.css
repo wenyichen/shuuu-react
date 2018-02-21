@@ -1,18 +1,4 @@
-body {
-  font-family: 'Muli', sans-serif;
-  z-index: -2;
-  background-color: gray;
-  background-image: url('../img/background.jpeg');
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-}
-
-#bar {
-  z-index: 2;
-}
-
-#overlay {
+/* #overlay {
   z-index: -1;
   background-color: black;
   opacity: 0.5;
@@ -21,7 +7,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-}
+} */
 
 #acc-form {
   overflow: hidden;
