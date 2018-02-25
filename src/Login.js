@@ -11,24 +11,24 @@ class Login extends Component {
                 <Navbar />
                 <div id="overlay">
                 </div>
-                <div class="middlebox" id="login-box">
+                <div className="middlebox" id="login-box">
                     <div id="middlebox-topbar">
-                        <p>Sign in</p>
+                        <p>Sign In</p>
                     </div>
                     <form id="login-form">
-                        <div class="text-input">
-                            <label for ="_name">Name</label>
+                        <div className="text-input">
+                            <label htmlFor ="_name">Name</label>
                             <input type="text" id="_name" name="name" value="" />
                         </div>
-                        <div class="text-input">
-                            <label for="_tel">Phone Number</label>
+                        <div className="text-input">
+                            <label htmlFor="_tel">Phone Number</label>
                             <input type="tel" id="_tel" name="tel" value="" />
                         </div>
-                        <div class="text-input">
-                            <label for="_pass">Password</label>
+                        <div className="text-input">
+                            <label htmlFor="_pass">Password</label>
                             <input type="password" id="_pass" name="pass" value="" />
                         </div>
-                        <button id="login-button">Sign in</button>
+                        <button id="login-button">Sign In</button>
                     </form>
                     <div id="signup">
                         <p>Need an account?</p>
