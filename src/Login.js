@@ -31,7 +31,7 @@ class Login extends Component {
                         <button id="login-button">Sign in</button>
                     </form>
                     <div id="signup">
-                        <p>Don't have an account?</p>
+                        <p>Need an account?</p>
                         <Link to="/signup">Sign Up</Link>
                     </div>
                 </div>
@@ -41,4 +41,3 @@ class Login extends Component {
 }
 
 export default Login;
-
