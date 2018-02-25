@@ -4,6 +4,7 @@ import Signup from './Signup';
 import Login from './Login';
 import InfoRider from './Info-Rider';
 import InfoDriver from './Info-Driver';
+import Account from './Account';
 
 const routes = [{
     path: '/',
@@ -28,6 +29,10 @@ const routes = [{
 {
     path: '/info/drivers',
     component: InfoDriver,
+},
+{
+    path: '/Account',
+    component: Account,
 }
 ]
 
