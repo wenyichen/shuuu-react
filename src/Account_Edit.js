@@ -4,7 +4,7 @@ import './css/account.css';
 import Navbar from './Common/Navbar';
 import { Link } from "react-router-dom";
 
-class Account extends Component {
+class Account_Edit extends Component {
     render() {
         return (
             <div>
@@ -18,20 +18,30 @@ class Account extends Component {
                         <form id="acc-form">
                             <div id="name-display">
                                 <label htmlFor="_name">Name</label>
-                                <p id="_name" name="name">John Smith</p>
+                                <input id="_name" name="name" defaultValue="John Smith" />
                             </div>
                             <div id="tel-display">
                                 <label htmlFor="_tel">Phone Number</label>
-                                <p id="_tel" name="tel">(123)-456-7890</p>
+                                <input id="_tel" name="tel" defaultValue="(123)-456-7890" />
                             </div>
                             <div className="text-input">
-                                <label htmlFor="_curpass">Password</label>
-                                <p type="password" id="_curpass" name="curpass">********</p>
+                                <label htmlFor="_curpass">Current Password</label>
+                                <input type="password" id="_curpass" name="curpass"
+                                defaultValue="********" />
                             </div>
+                            <div className="text-input">
+                                <label htmlFor="_pass">New Password</label>
+                                <input type="password" id="_pass" name="pass" defaultValue="" />
+                            </div>
+                            <div className="text-input">
+                                <label htmlFor="_confirmpass">Confirm Password</label>
+                                <input type="password" id="_confirmpass" name="confirmpass"
+                                defaultValue="" />
+                            </div>
+                            <Link to="/Account">
                             <button id="save-button">Save</button>
-                            <Link to="/Account_Edit">
-                            <button id="edit-button">Edit</button>
                             </Link>
+
                         </form>
                 </div>
             </div>
@@ -39,4 +49,4 @@ class Account extends Component {
     }
 }
 
-export default Account;
+export default Account_Edit;

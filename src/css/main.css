@@ -26,7 +26,7 @@ a {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     overflow: hidden;
     text-align: center;
-    background-color: #33235f;
+    background-color: #604c8d;
     height: 70px;
     top: 0;
 }
@@ -64,7 +64,7 @@ a {
 
 #nav a:hover {
     cursor: pointer;
-    background-color: #604c8d;
+    background-color: #8f78bc;
 }
 
 #nav a:hover li {
