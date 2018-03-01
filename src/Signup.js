@@ -10,25 +10,25 @@ class Signup extends Component {
                 <Navbar />
                 <div id="overlay">
                 </div>
-                <div class="middlebox" id="signup-box">
+                <div className="middlebox" id="signup-box">
                     <div id="middlebox-topbar">
                         <p>Sign Up</p>
                     </div>
                     <form id="signup-form">
-                        <div class="text-input">
-                            <label for="_name">Name</label>
+                        <div className="text-input">
+                            <label htmlFor="_name">Name</label>
                             <input type="text" id="_name" name="name" value="" />
                         </div>
-                        <div class="text-input">
-                            <label for="_tel">Phone Number</label>
+                        <div className="text-input">
+                            <label htmlFor="_tel">Phone Number</label>
                             <input type="text" id="_tel" name="tel" value="" />
                         </div>
-                        <div class="text-input">
-                            <label for="_pass">Password</label>
+                        <div className="text-input">
+                            <label htmlFor="_pass">Password</label>
                             <input type="password" id="_pass" name="pass" value="" />
                         </div>
-                        <div class="text-input">
-                            <label for="_confirmpass">Confirm Password</label>
+                        <div className="text-input">
+                            <label htmlFor="_confirmpass">Confirm Password</label>
                             <input type="password" id="_confirmpass" name="confirmpass" value="" />
                         </div>
                         <button type="submit" id="signup-button">Sign Up</button>
