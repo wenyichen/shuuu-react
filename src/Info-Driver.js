@@ -3,9 +3,15 @@ import './css/main.css';
 import './css/info.css';
 import Navbar from './Common/Navbar';
 import Autocomplete from 'react-google-autocomplete';
+//import IntlTelInput from 'react-intl-tel-input';
+//import 'file?name=libphonenumber.js!./node_modules/react-intl-tel-input/dist/libphonenumber.js';
+//import './node_modules/react-intl-tel-input/dist/main.css';
+import Phone from 'react-phone-number-input';
+import 'react-phone-number-input/rrui.css';
+import 'react-phone-number-input/style.css';
+
 
 class InfoDriver extends Component {
-
     render() {
 
         return (
@@ -44,15 +50,16 @@ class InfoDriver extends Component {
                             placeholder="4" required/>
                         </div>
                         <div className="tel-input">
-                            <label htmlFor="_tel">Phone Number:</label>
-                            <input type="tel" id="_tel" name="tel" placeholder="(XXX)-XXX-XXXX"
-                            pattern="\d{4}-\d{3}-\d{4}$" required/>
+
+                            <Phone
+                              placeholder="Enter phone number"
+                              onChange={ phone => this.setState({ phone }) } />
                         </div>
                         <div className="note-input">
                             <label id="notes_label" htmlFor="_notes">Notes:</label>
                             <textarea id="_notes" rows="5" name="notes"></textarea>
                         </div>
-                        <button type="submit" id="continue-button">Continue</button>
+                        <div className="button" type="submit" id="continue-button">Continue</div>
                     </form>
                 </div>
             </div>
@@ -61,4 +68,3 @@ class InfoDriver extends Component {
 }
 
 export default InfoDriver;
-
