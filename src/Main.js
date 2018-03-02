@@ -16,9 +16,7 @@ class Main extends Component {
                 </div>
                 <div id="start">
                     <Link to="/start">
-                        <button>
-                            Get Started!
-                        </button>
+                        <div className="button"> Get Started!</div>
                     </Link>
                 </div>
             </div>

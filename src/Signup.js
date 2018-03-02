@@ -31,7 +31,7 @@ class Signup extends Component {
                             <label htmlFor="_confirmpass">Confirm Password</label>
                             <input type="password" id="_confirmpass" name="confirmpass" value="" />
                         </div>
-                        <button type="submit" id="signup-button">Sign Up</button>
+                        <div className="button" type="submit" id="signup-button">Sign Up</div>
                     </form>
                 </div>
             </div>

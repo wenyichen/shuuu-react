@@ -10,11 +10,11 @@ class Autoaddress extends React.Component {
       this.state = { address: '' }
       this.onChange = (address) => this.setState({ address })
     }
-  
+
     render() {
-  
+
       return (
-        <Autocomplete 
+        <Autocomplete
         types={['address']}
         />
       )
@@ -60,7 +60,7 @@ class InfoRider extends Component {
                             <label id="notes_label" htmlFor="_notes">Notes:</label>
                             <textarea id="_notes" rows="5" name="notes"></textarea>
                         </div>
-                        <button type="submit" id="continue-button">Continue</button>
+                        <div className="button" type="submit" id="continue-button">Continue</div>
                     </form>
                 </div>
             </div>
@@ -69,4 +69,3 @@ class InfoRider extends Component {
 }
 
 export default InfoRider;
-
