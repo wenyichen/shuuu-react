@@ -29,7 +29,7 @@
   border: 1px solid #8e77bc;
 }
 
-.info button {
+.info .button {
   margin-top: 20px;
   margin-right: 10px;
   float: right;
@@ -118,12 +118,12 @@
   clear:left;
 }
 
-.show button {
+.show .button {
   float: right;
   width: auto;
 }
 
-.swal-button-container button {
+.swal-button-container .button {
   float: right;
   background-color: #33235f;
 }

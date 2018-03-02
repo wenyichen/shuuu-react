@@ -26,10 +26,18 @@
     margin-top: 2px;
 }
 
+#info-form input[type="tel"] {
+    margin: 0;
+}
+
 #info-form label {
     font-size: 13px;
     text-transform: uppercase;
     float: left;
+    clear: both;
+}
+
+.react-phone-number-input {
     clear: both;
 }
 
@@ -68,7 +76,6 @@
 }
 
 .tel-input {
-    overflow: hidden;
     margin-bottom: 10px;
     padding-right: 20px;
 }

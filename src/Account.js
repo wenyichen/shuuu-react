@@ -28,9 +28,9 @@ class Account extends Component {
                                 <label htmlFor="_curpass">Password</label>
                                 <p type="password" id="_curpass" name="curpass">********</p>
                             </div>
-                            <button id="save-button">Save</button>
+                            <div className="button" id="save-button">Save</div>
                             <Link to="/Account_Edit">
-                            <button id="edit-button">Edit</button>
+                            <div className="button" id="edit-button">Edit</div>
                             </Link>
                         </form>
                 </div>
