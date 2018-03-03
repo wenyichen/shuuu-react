@@ -6,6 +6,7 @@ import InfoRider from './Info-Rider';
 import InfoDriver from './Info-Driver';
 import Account from './Account';
 import Account_Edit from './Account_Edit';
+import Trips from './Trips';
 
 const routes = [{
     path: '/',
@@ -32,12 +33,16 @@ const routes = [{
     component: InfoDriver,
 },
 {
-    path: '/Account',
+    path: '/account',
     component: Account,
 },
 {
-    path: '/Account_Edit',
+    path: '/account/edit',
     component: Account_Edit,
+},
+{
+    path: '/trips',
+    component: Trips,
 }
 ]
 

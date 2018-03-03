@@ -1,25 +1,9 @@
-.decline{
-  color: black;
-  background-color: white;
-  border: 1px solid #8f78bd;
-}
-
-/* #overlay {
-    z-index: -1;
-    background-color: black;
-    opacity: 0.5;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-} */
-
 .trip {
   margin-top: 25px;
 }
 
 .info {
+  box-sizing: border-box;
   overflow: hidden;
   padding: 15px;
   margin: 0px auto;
@@ -44,6 +28,7 @@
 }
 
 .chat {
+  box-sizing: border-box;
   overflow-y: scroll;
   overflow-x: none;
   height: 100px;
@@ -70,12 +55,13 @@
 
 .chatbar input {
   flex: 2;
+  width: 100%;
   height: auto;
   margin: 0;
   border: 0;
 }
 
-.chatbar button {
+.chatbar .button {
   padding: 5px;
   height: auto;
   float: right;
@@ -118,7 +104,7 @@
   clear:left;
 }
 
-.show .button {
+.show.button {
   float: right;
   width: auto;
 }

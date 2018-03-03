@@ -9,8 +9,6 @@ class Start extends Component {
         return (
             <div>
                 <Navbar />
-                <div id="overlay">
-                </div>
                 <div id="mb-container">
                     <div className="middlebox" id="start-box">
                         <div id="middlebox-topbar">
