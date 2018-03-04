@@ -21,12 +21,15 @@
     "react-scripts": "1.1.1"
   },
   "scripts": {
+    "chai-test":"NODE_ENV=test mocha --compilers js:babel-core/register
+            --require chai_test.js \"./src/tester.js\"",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+
   },
   "devDependencies": {
     "enzyme": "^3.3.0",
