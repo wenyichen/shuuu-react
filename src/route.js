@@ -1,6 +1,7 @@
 import Main from './Main';
 import Start from './Start';
 import Signup from './Signup';
+import Search from './Search';
 import Login from './Login';
 import InfoRider from './Info-Rider';
 import InfoDriver from './Info-Driver';
@@ -19,6 +20,10 @@ const routes = [{
 {
     path: '/signup',
     component: Signup,
+},
+{
+    path: '/search',
+    component: Search,
 },
 {
     path: '/login',

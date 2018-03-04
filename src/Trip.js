@@ -10,20 +10,11 @@ class Trip extends Component {
         this.toggleShow = this.toggleShow.bind(this);
         this.addMessage = this.addMessage.bind(this);
         this.updateInputValue = this.updateInputValue.bind(this);
-        this.date = props.trip.date;
-        this.dest = props.trip.dest;
-        this.depart = props.trip.depart;
-        this.status = props.trip.status;
-        this.driver = props.trip.driver;
         this.state = {
             show: false,
             messages: props.trip.chats,
             chatinput: ""
         };
-    }
-
-    key() {
-        return this.date + this.dest + this.depart + this.status + this.driver;
     }
 
     toggleShow() {
@@ -78,18 +69,18 @@ class Trip extends Component {
         };
 
         return (
-            <div className="trip" key={this.key()}>
+            <div className="trip" >
                 <div className="info">
-                    <div className="date">{this.date}</div>
-                    <div className="depart">{this.depart}</div>
+                    <div className="date">{this.props.trip.date}</div>
+                    <div className="depart">{this.props.trip.depart}</div>
                     <div
                         className="chevron oi oi-chevron-right"
                         title=">"
                         aria-hidden="true"
                     />
-                    <div className="dest">{this.dest}</div>
-                    <div className="status">Status: {this.status}</div>
-                    <div className="driver">Driver: {this.driver}</div>
+                    <div className="dest">{this.props.trip.dest}</div>
+                    <div className="status">Status: {this.props.trip.status}</div>
+                    <div className="driver">Driver: {this.props.trip.driver}</div>
                     <div className="buttons">
                         <div className="button show" onClick={this.toggleShow}>
                             {this.state.show ? "Show Less" : "Show More"}

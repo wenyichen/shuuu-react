@@ -15,7 +15,7 @@ class Trips extends Component {
         return (
             <div>
                 <Navbar />
-                <div className="trips">
+                <div id="trips">
                     {this.props.trips.map((trip, index) => <Trip key={index} trip={trip}/>)}
                 </div>
             </div>

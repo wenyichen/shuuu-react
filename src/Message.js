@@ -6,41 +6,33 @@ import "./css/trips.css";
 class Message extends Component {
     constructor(props) {
         super();
-        this.type = props.msg.type;
-        this.time = props.msg.date;
-        this.user = props.msg.user;
-        this.text = props.msg.text;
-        this.str = this.time.toLocaleString();
-        switch (this.type) {
+        this.str = props.msg.date.toLocaleString();
+        switch (props.msg.type) {
             case "notification":
-                this.str += ": " + this.text;
+                this.str += ": " + props.msg.text;
                 break;
             case "message":
-                this.str += " " + this.user + ": " + this.text;
+                this.str += " " + props.msg.user + ": " + props.msg.text;
                 break;
             case "todo":
-                this.str += " Upcoming: " + this.text;
+                this.str += " Upcoming: " + props.msg.text;
                 break;
             default:
                 this.str += ": Error";
         }
     }
 
-    componentWillReceiveProps (props) {
-        this.type = props.msg.type;
-        this.time = props.msg.date;
-        this.user = props.msg.user;
-        this.text = props.msg.text;
-        this.str = this.time.toLocaleString();
-        switch (this.type) {
+    componentWillReceiveProps(props) {
+        this.str = props.msg.date.toLocaleString();
+        switch (props.msg.type) {
             case "notification":
-                this.str += ": " + this.text;
+                this.str += ": " + props.msg.text;
                 break;
             case "message":
-                this.str += " " + this.user + ": " + this.text;
+                this.str += " " + props.msg.user + ": " + props.msg.text;
                 break;
             case "todo":
-                this.str += " Upcoming: " + this.text;
+                this.str += " Upcoming: " + props.msg.text;
                 break;
             default:
                 this.str += ": Error";
@@ -48,7 +40,7 @@ class Message extends Component {
     }
 
     render() {
-        return <div className={this.type}> {this.str} </div>;
+        return <div className={this.props.msg.type}> {this.str} </div>;
     }
 }
 
