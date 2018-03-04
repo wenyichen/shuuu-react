@@ -1,13 +1,8 @@
-/* #overlay {
-  z-index: -1;
-  background-color: black;
-  opacity: 0.5;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-} */
+p {
+  display: block;
+  clear: both;
+  margin: 0;
+}
 
 #acc-form {
   overflow: hidden;
@@ -85,8 +80,7 @@
   margin-bottom: 20px;
   float: right;
   bottom: 0px;
-  height: 40px;
-  width: 100px;
+  width: 60px;
   vertical-align: bottom;
 }
 

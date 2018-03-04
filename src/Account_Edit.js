@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import './css/main.css';
-import './css/account.css';
-import Navbar from './Common/Navbar';
+import React, { Component } from "react";
+import "./css/main.css";
+import "./css/account.css";
+import Navbar from "./Common/Navbar";
 import { Link } from "react-router-dom";
 
 class Account_Edit extends Component {
@@ -9,46 +9,69 @@ class Account_Edit extends Component {
         return (
             <div>
                 <Navbar />
-                <div id="overlay">
-                </div>
+                <div id="overlay" />
                 <div className="middlebox" id="acc-box">
-                        <div id="middlebox-topbar">
-                            <p>My Account:</p>
+                    <div id="middlebox-topbar">
+                        <p>My Account:</p>
+                    </div>
+                    <form id="acc-form">
+                        <div id="name-display" className="name">
+                            <label htmlFor="_name">Name</label>
+                            <input
+                                id="_name"
+                                name="name"
+                                defaultValue="John Smith"
+                            />
                         </div>
-                        <form id="acc-form">
-                            <div id="name-display" className="name">
-                                <label htmlFor="_name">Name</label>
-                                <input id="_name" name="name" defaultValue="John Smith" />
+                        <div id="tel-display" className="tel">
+                            <label htmlFor="_tel">Phone Number</label>
+                            <input
+                                id="_tel"
+                                name="tel"
+                                defaultValue="(123)-456-7890"
+                            />
+                        </div>
+                        <div className="old_pass">
+                            <label htmlFor="_curpass">Current Password</label>
+                            <input
+                                type="password"
+                                id="_curpass"
+                                name="curpass"
+                                defaultValue="********"
+                            />
+                        </div>
+                        <div className="new_pass">
+                            <label htmlFor="_pass">New Password</label>
+                            <input
+                                type="password"
+                                id="_pass"
+                                name="pass"
+                                defaultValue=""
+                            />
+                        </div>
+                        <div className="confirm_pass">
+                            <label htmlFor="_confirmpass">
+                                Confirm Password
+                            </label>
+                            <input
+                                type="password"
+                                id="_confirmpass"
+                                name="confirmpass"
+                                defaultValue=""
+                            />
+                        </div>
+                        <Link to="/account">
+                            <div className="button" id="save-button">
+                                Save
                             </div>
-                            <div id="tel-display" className="tel">
-                                <label htmlFor="_tel">Phone Number</label>
-                                <input id="_tel" name="tel" defaultValue="(123)-456-7890" />
-                            </div>
-                            <div className="old_pass">
-                                <label htmlFor="_curpass">Current Password</label>
-                                <input type="password" id="_curpass" name="curpass"
-                                defaultValue="********" />
-                            </div>
-                            <div className="new_pass">
-                                <label htmlFor="_pass">New Password</label>
-                                <input type="password" id="_pass" name="pass" defaultValue="" />
-                            </div>
-                            <div className="confirm_pass">
-                                <label htmlFor="_confirmpass">Confirm Password</label>
-                                <input type="password" id="_confirmpass" name="confirmpass"
-                                defaultValue="" />
-                            </div>
-                            <Link to="/Account">
-                            <div className="button" id="save-button">Save</div>
-                            </Link>
-
-                        </form>
+                        </Link>
+                    </form>
                 </div>
             </div>
         );
     }
 
-/*    function edit(event) {
+    /*    function edit(event) {
         var button = event.target;
         var fo = button.parentElement;
         var content_name = null;
