@@ -16,6 +16,7 @@ class Trip extends Component {
         this.status = props.trip.status;
         this.driver = props.trip.driver;
         this.state = {
+            //alert: 0,
             show: false,
             messages: props.trip.chats,
             chatinput: ""
@@ -28,7 +29,10 @@ class Trip extends Component {
 
     toggleShow() {
         const s = this.state.show;
-        this.setState({ show: !s });
+        this.setState(
+            //alert: 0,
+            { show: !s }
+        );
     }
 
     addMessage() {
@@ -59,6 +63,7 @@ class Trip extends Component {
         }
 
         this.setState({
+            //alert: alert + 1,
             chatinput: ""
         });
     }
