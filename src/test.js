@@ -1,39 +1,31 @@
 import TestUtils from 'react-addons-test-utils';
-import { renderIntoDocument } from 'react-addons-test-utils';
-import { scryRenderedDOMComponentsWithClass as findByClass } from 'react-addons-test-utils';
+import React from 'react';
+import expect from 'expect';
+import Enzyme from 'enzyme';
+import { render, mount, shallow } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-15';
+import { Route, Link, MemoryRouter } from 'react-router-dom'
 
-import { expect } from 'chai';
-import { shallow } from 'enzyme';
-import sinon from 'sinon';
-
+import Message from './Message';
 import Trip from './Trip';
 import Trips from './Trips';
 
+Enzyme.configure({ adapter: new Adapter() })
+
 describe('<Trips />', () => {
-  it('renders three <Trips /> components', () => {
+  it('renders two <Trips /> components', () => {
     const wrapper = shallow(<Trips />);
-    expect(wrapper.find(Trip)).to.have.length(1);
+    expect(wrapper.find(Trip).length).toBe(2);
   });
 
-  it('renders an `.chat`', () => {
+  it('renders a navbar when passed in', () => {
     const wrapper = shallow(<Trips />);
-    expect(wrapper.find(Trip).render().find('.chat')).to.have.length(11);
+    expect(wrapper.find('Navbar').length).toBe(1);
   });
 
   it('renders children when passed in', () => {
-    const wrapper = shallow((
-      <Trip>
-        <div className="chat" />
-      </Trip>
-    ));
-    expect(wrapper.contains(<div className="chat" />)).to.equal(true);
-  });
-
-  it('simulates click events', () => {
-    const onButtonClick = sinon.spy();
-    const wrapper = shallow(<Trip />);
-    wrapper.find('button show').simulate('click');
-    expect(onButtonClick).to.have.property('state[0]', true);
+    const wrapper = shallow(<Trips />);
+    expect(wrapper.find('#trips').length).toBe(1);
   });
 });
 
@@ -50,6 +42,14 @@ describe('<Trip />', () => {
 
     wrapper.setProps({ status: 'ready' });
     expect(wrapper.props().status).to.equal('ready');
+  });
+
+  it('renders messages when passed in', () => {
+    const wrapper = mount(
+      <MemoryRouter>
+        <Trips/>
+      </MemoryRouter>);
+    expect(wrapper.find(Trip).at(0).find(Message).length).toBe(11);
   });
 
   it('simulates click events', () => {
