@@ -7,11 +7,13 @@ class App extends Component {
   render() {
     const routeComponents = routes.map(({path, component}, key) => <Route exact path={path} component={component} key={key} />);
     return (
-      <BrowserRouter basename="/shuuu-react">
-        <div>
-          {routeComponents}
-        </div>
-      </BrowserRouter>
+      <Provider store={store}>
+        <BrowserRouter basename="/shuuu-react">
+          <div>
+            {routeComponents}
+          </div>
+        </BrowserRouter>
+      </Provider>
     );
   }
 }
