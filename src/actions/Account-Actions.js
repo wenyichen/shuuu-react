@@ -1,6 +1,5 @@
 import * as types from './Action-Types';
 
-
 /*
  * action creators
  */

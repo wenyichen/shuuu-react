@@ -1,8 +1,9 @@
 import {combineReducers} from 'redux';
-import * as types from './Action-Types';
+import * as types from '../actions/Action-Types';
+import initialState from './initialState';
 
 
-function account_reducer(state = [], action) {
+export default function account_reducer(state = initialState.accounts, action) {
   switch (action.type) {
     case types.CREATE_ACCOUNT_SUCCESS:
       return [
