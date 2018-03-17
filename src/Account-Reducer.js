@@ -1,34 +1,24 @@
-import {combineReducers} from 'redux'
-import {
-  CREATE_ACCOUNT,
-  EDIT_ACCOUNT
-} from './Account-Actions'
+import {combineReducers} from 'redux';
+import * as types from './Action-Types';
 
 
 function account_reducer(state = [], action) {
   switch (action.type) {
-    case CREATE_ACCOUNT:
+    case types.CREATE_ACCOUNT_SUCCESS:
       return [
         ...state,
-        {
-          
-        }
+        Object.assign({}, action.account)
       ]
 
-    case types.LOAD_ACCOUNT:
-      return action.account;
+    case types.LOAD_ACCOUNT_SUCCESS:
+      return action.accounts;
 
-    case EDIT_ACCOUNT:
-      return state.map((todo, index) => {
-        if (index === action.index) {
-          return Object.assign({}, todo,
-            {
-              completed: !todo.completed
-            }
-          )
-        }
-        return todo
-      })
+    case types.EDIT_ACCOUNT_SUCCESS:
+      return [
+        ...state.filter(a => a.name !== action.account.id),
+        Object.assign({}, action.account)
+      ];
+
     default:
       return state
   }

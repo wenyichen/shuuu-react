@@ -1,23 +1,17 @@
-/*
- * action types
- */
-export const CREATE_ACCOUNT = 'CREATE_ACCOUNT'
-export const LOAD_ACCOUNT = 'LOAD_ACCOUNT'
-export const EDIT_ACCOUNT = 'EDIT_ACCOUNT'
-
+import * as types from './Action-Types';
 
 
 /*
  * action creators
  */
 export function create_account(account) {
-  return {type: CREATE_ACCOUNT, account}
+  return {type: types.CREATE_ACCOUNT_SUCCESS, account}
  }
 
 export function load_account(account) {
-  return {type: LOAD_ACCOUNT, account}
+  return {type: types.LOAD_ACCOUNT_SUCCESS, account}
 }
 
 export function edit_account(account) {
-  return {type: EDIT_ACCOUNT, account}
+  return {type: types.EDIT_ACCOUNT_SUCCESS, account}
 }
