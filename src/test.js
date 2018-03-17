@@ -3,7 +3,7 @@ import React from 'react';
 import expect from 'expect';
 import Enzyme from 'enzyme';
 import { render, mount, shallow } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-15';
+import Adapter from 'enzyme-adapter-react-16';
 import { Route, Link, MemoryRouter } from 'react-router-dom'
 
 import Message from './Message';
