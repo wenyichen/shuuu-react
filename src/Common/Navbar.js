@@ -1,15 +1,20 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from "react";
+import { PropTypes } from "prop-types";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import toastr from "toastr";
 
 class Title extends Component {
-    
     render() {
-        let ret = '';
+        let ret = "";
         if (this.props.display === undefined || this.props.display) {
             ret = (
-            <div id="title">
-                <h1><Link to="/">shuuu</Link></h1>
-            </div>
+                <div id="title">
+                    <h1>
+                        <Link to="/">shuuu</Link>
+                    </h1>
+                </div>
             );
         }
         return ret;
@@ -17,6 +22,9 @@ class Title extends Component {
 }
 
 class Navbar extends Component {
+    constructor(props, context) {
+        super(props, context);
+    }
 
     render() {
         return (
@@ -27,14 +35,50 @@ class Navbar extends Component {
                         {/* If logged in display My Account/MyTrips
                         else display Login/Signup */}
                         <ul>
-                            <Link to="/account"><li><span>My Account</span></li></Link>
-                            <Link to="/trips"><li><span>My Trips</span></li></Link>
+                            {this.props.loggedin ? (
+                                <Fragment>
+                                    <Link to="/account">
+                                        <li>
+                                            <span>My Account</span>
+                                        </li>
+                                    </Link>
+                                    <Link to="/trips">
+                                        <li>
+                                            <span>My Trips</span>
+                                        </li>
+                                    </Link>
+                                </Fragment>
+                            ) : (
+                                <Fragment>
+                                    <Link to="/signup">
+                                        <li>
+                                            <span>Sign Up</span>
+                                        </li>
+                                    </Link>
+                                    <Link to="/login">
+                                        <li>
+                                            <span>Login</span>
+                                        </li>
+                                    </Link>
+                                </Fragment>
+                            )}
                         </ul>
                     </div>
                 </div>
             </div>
         );
-  }
+    }
 }
 
-export default Navbar;
+//Pull in the React Router context so router is available on this.context.router.
+Navbar.contextTypes = {
+    router: PropTypes.object
+};
+
+function mapStateToProps(state, ownProps) {
+    return {
+        loggedin: state.loggedin.loggedin
+    };
+}
+
+export default connect(mapStateToProps)(Navbar);

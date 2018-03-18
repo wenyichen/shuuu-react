@@ -1,15 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./components/App";
-import configureStore from './store/configureStore';
+import App from "./App";
 import registerServiceWorker from "./registerServiceWorker";
+import { createStore } from "redux";
 import { Provider } from "react-redux";
-import {loadAccounts} from './actions/accountActions';
-import {logout} from './actions/loginActions';
+import shuuuApp from "./reducers";
 
-let store = configureStore();
-store.dispatch(loadAccounts());
-store.dispatch(logout());
+let store = createStore(shuuuApp);
 
 ReactDOM.render(
     <Provider store={store}>

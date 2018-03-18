@@ -2,7 +2,7 @@ import expect from 'expect';
 import { createStore } from 'redux';
 import rootReducer from '../reducers';
 import initialState from '../reducers/initialState';
-import * as accountActions from '../actions/Account-Actions';
+import * as accountActions from '../actions/accountActions';
 
 describe('Store', function() {
   it('Should handle creating courses', function() {
