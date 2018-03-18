@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {PropTypes} from "prop-types"
+import { PropTypes } from "prop-types";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import "../css/main.css";
@@ -35,8 +35,10 @@ class Signup extends Component {
 
         this.setState({ saving: true });
 
+        var acc = this.state.account;
+        acc.trips = [];
         this.props.actions
-            .saveAccount(this.state.account)
+            .saveAccount(acc)
             .then(() => this.redirect())
             .catch(error => {
                 toastr.error(error);
@@ -47,7 +49,6 @@ class Signup extends Component {
     redirect() {
         this.setState({ saving: false });
         toastr.success("Account saved");
-        console.log(this.context);
         this.context.router.history.push("/");
     }
 
@@ -67,7 +68,7 @@ class Signup extends Component {
                                 type="text"
                                 id="_name"
                                 name="name"
-                                value={this.state.account.name}
+                                value={this.state.account.name || ''}
                                 onChange={this.change}
                             />
                         </div>
@@ -77,7 +78,7 @@ class Signup extends Component {
                                 type="tel"
                                 id="_tel"
                                 name="phone"
-                                value={this.state.account.phone}
+                                value={this.state.account.phone || ''}
                                 onChange={this.change}
                             />
                         </div>
@@ -87,7 +88,7 @@ class Signup extends Component {
                                 type="password"
                                 id="_pass"
                                 name="password"
-                                value={this.state.account.password}
+                                value={this.state.account.password || ''}
                                 onChange={this.change}
                             />
                         </div>
@@ -99,8 +100,6 @@ class Signup extends Component {
                                 type="password"
                                 id="_confirmpass"
                                 name="confirmpass"
-                                value={this.state.account.confirm}
-                                onChange={this.change}
                             />
                         </div>
                         <div

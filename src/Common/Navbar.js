@@ -27,6 +27,10 @@ class Navbar extends Component {
     }
 
     render() {
+        if (!this.props.loggedin && this.context.router.history.location.pathname != '/' && this.context.router.history.location.pathname != '/login' && this.context.router.history.location.pathname != '/signup' ) {
+            this.context.router.history.push('/');
+        }
+
         return (
             <div>
                 <div id="bar">

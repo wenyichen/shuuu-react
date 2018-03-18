@@ -6,6 +6,7 @@ import "../css/main.css";
 import "../css/info.css";
 import Navbar from "../Common/Navbar";
 import * as tripActions from "../actions/tripActions";
+import * as accountActions from "../actions/accountActions";
 import Autocomplete from "react-google-autocomplete";
 //import IntlTelInput from 'react-intl-tel-input';
 //import 'file?name=libphonenumber.js!./node_modules/react-intl-tel-input/dist/libphonenumber.js';
@@ -25,6 +26,7 @@ class InfoDriver extends Component {
         this.change = this.change.bind(this);
         this.save = this.save.bind(this);
         this.redirect = this.redirect.bind(this);
+        this.addTripToAccount = this.addTripToAccount.bind(this);
     }
 
     change(event) {
@@ -33,6 +35,10 @@ class InfoDriver extends Component {
         account[field] = event.target.value;
         return this.setState({ account: account });
     }
+
+    generateId = trip => {
+        return "0" + trip.date + trip.depart + trip.dest + trip.driver + "0";
+    };
 
     save(event) {
         event.preventDefault();
@@ -43,16 +49,15 @@ class InfoDriver extends Component {
 
         var account = {};
         for (var a of this.props.accounts) {
-            console.log(a);
             if (a.id == id) {
                 account = Object.assign({}, a);
                 break;
             }
         }
-        console.log(account);
         let tripCopy = Object.assign({}, this.state.trip, {
             phone: account.phone,
-            driver: account.name
+            driver: account.name,
+            chats: []
         });
         this.setState({
             trip: tripCopy
@@ -60,13 +65,20 @@ class InfoDriver extends Component {
 
         this.props.actions
             .saveTrip(this.state.trip)
-            .then((trip) => 
-            this.props.actions.addTriptoAccount(trip.id),
-            this.redirect())
+            .then(() => {
+                this.redirect();
+            })
             .catch(error => {
                 toastr.error(error);
-                this.setState({ saving: false });
             });
+
+        this.addTripToAccount(this.generateId(this.state.trip), account);
+    }
+
+    addTripToAccount(tid, acc) {
+        var acc = Object.assign(acc);
+        acc.trips = [...acc.trips, tid];
+        this.props.accActions.saveAccount(acc);
     }
 
     redirect() {
@@ -185,7 +197,8 @@ function mapStateToProps(state, ownProps) {
 
 function mapDispatchToProps(dispatch) {
     return {
-        actions: bindActionCreators(tripActions, dispatch)
+        actions: bindActionCreators(tripActions, dispatch),
+        accActions: bindActionCreators(accountActions, dispatch)
     };
 }
 

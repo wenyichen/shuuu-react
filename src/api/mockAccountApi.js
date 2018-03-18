@@ -42,7 +42,7 @@ class AccountApi {
   }
 
   static saveTripToAccount(aid, tripid) {
-    
+
   }
 
   static saveAccount(account) {
@@ -57,7 +57,6 @@ class AccountApi {
           //The server would generate ids for new accounts in a real app.
           //Cloning so copy returned is passed by value rather than by reference.
           account.id = generateId(account);
-          console.log(accounts);
           accounts.push(account);
         }
 

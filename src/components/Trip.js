@@ -12,7 +12,7 @@ class Trip extends Component {
         this.state = {
             //alert: 0,
             show: false,
-            messages: props.trip.chats,
+            messages: props.trip.chats || [],
             chatinput: ""
         };
     }
@@ -49,7 +49,7 @@ class Trip extends Component {
         if (ind !== -1) {
             chats.splice(ind, 0, msg);
         } else {
-            chats.append(msg);
+            chats.push(msg);
         }
 
         this.setState({
