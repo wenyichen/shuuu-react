@@ -83,7 +83,7 @@ class Login extends Component {
                                 type="password"
                                 id="_pass"
                                 name="password"
-                                value={this.state.info.password}
+                                value={this.state.info.password || ''}
                                 onChange={this.change}
                             />
                         </div>

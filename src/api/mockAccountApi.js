@@ -6,21 +6,24 @@ import delay from './delay';
 const accounts = [
   {
     id: '0',
-    name: 'Qing Chen',
+    name: 'Qingchen Dang',
     phone: '1234',
-    password: '1234'
+    password: '1234',
+    trips: [0]
   },
   {
     id: '1',
     name: 'Wenyi Chen',
     phone: '0987',
-    password: '5678'
+    password: '5678',
+    trips: [1]
   },
   {
     id: '2',
     name: 'Justin Kim',
     phone: '1029',
-    password: '4857'
+    password: '4857',
+    trips: [0,1]
   }
 ];
 
@@ -36,6 +39,10 @@ class AccountApi {
         resolve(Object.assign([], accounts));
       }, delay);
     });
+  }
+
+  static saveTripToAccount(aid, tripid) {
+    
   }
 
   static saveAccount(account) {

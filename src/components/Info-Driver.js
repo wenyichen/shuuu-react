@@ -1,16 +1,81 @@
 import React, { Component } from "react";
+import { PropTypes } from "prop-types";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 import "../css/main.css";
 import "../css/info.css";
 import Navbar from "../Common/Navbar";
+import * as tripActions from "../actions/tripActions";
 import Autocomplete from "react-google-autocomplete";
 //import IntlTelInput from 'react-intl-tel-input';
 //import 'file?name=libphonenumber.js!./node_modules/react-intl-tel-input/dist/libphonenumber.js';
 //import './node_modules/react-intl-tel-input/dist/main.css';
-import Phone from "react-phone-number-input";
-import "react-phone-number-input/rrui.css";
-import "react-phone-number-input/style.css";
+import toastr from "toastr";
 
 class InfoDriver extends Component {
+    constructor(props, context) {
+        super(props, context);
+
+        this.state = {
+            trip: {},
+            errors: {},
+            saving: false
+        };
+
+        this.change = this.change.bind(this);
+        this.save = this.save.bind(this);
+        this.redirect = this.redirect.bind(this);
+    }
+
+    change(event) {
+        const field = event.target.name;
+        let account = Object.assign({}, this.state.account);
+        account[field] = event.target.value;
+        return this.setState({ account: account });
+    }
+
+    save(event) {
+        event.preventDefault();
+
+        this.setState({ saving: true });
+
+        var id = this.props.loggedin.uid;
+
+        var account = {};
+        for (var a of this.props.accounts) {
+            console.log(a);
+            if (a.id == id) {
+                account = Object.assign({}, a);
+                break;
+            }
+        }
+        console.log(account);
+        let tripCopy = Object.assign({}, this.state.trip, {
+            phone: account.phone,
+            driver: account.name
+        });
+        this.setState({
+            trip: tripCopy
+        });
+
+        this.props.actions
+            .saveTrip(this.state.trip)
+            .then((trip) => 
+            this.props.actions.addTriptoAccount(trip.id),
+            this.redirect())
+            .catch(error => {
+                toastr.error(error);
+                this.setState({ saving: false });
+            });
+    }
+
+    redirect() {
+        this.setState({ saving: false });
+        toastr.success("Trip saved");
+        console.log(this.context);
+        this.context.router.history.push("/trips");
+    }
+
     render() {
         return (
             <div>
@@ -20,13 +85,15 @@ class InfoDriver extends Component {
                     <div id="middlebox-topbar">
                         <p>Find riders:</p>
                     </div>
-                    <form id="info-form" method="GET" action="./trips.html">
+                    <form id="info-form" method="GET">
                         <div className="text-input">
                             <label htmlFor="_depart">Departing From:</label>
                             <Autocomplete
                                 id="_depart"
                                 type="text"
                                 name="depart"
+                                value={this.state.trip.depart}
+                                onChange={this.change}
                                 required
                             />
                         </div>
@@ -36,6 +103,8 @@ class InfoDriver extends Component {
                                 id="_dest"
                                 type="text"
                                 name="dest"
+                                value={this.state.trip.dest}
+                                onChange={this.change}
                                 required
                             />
                         </div>
@@ -45,6 +114,8 @@ class InfoDriver extends Component {
                                 type="date"
                                 id="_date"
                                 name="date"
+                                value={this.state.trip.date}
+                                onChange={this.change}
                                 required
                             />
                         </div>
@@ -54,6 +125,8 @@ class InfoDriver extends Component {
                                 type="text"
                                 id="_type"
                                 name="type"
+                                value={this.state.trip.type}
+                                onChange={this.change}
                                 required
                             />
                         </div>
@@ -62,7 +135,9 @@ class InfoDriver extends Component {
                             <input
                                 type="text"
                                 id="_carNo."
-                                name="carNo."
+                                name="carno"
+                                value={this.state.trip.carno}
+                                onChange={this.change}
                                 required
                             />
                         </div>
@@ -75,27 +150,16 @@ class InfoDriver extends Component {
                                 min="1"
                                 max="7"
                                 placeholder="4"
+                                value={this.state.trip.seats}
+                                onChange={this.change}
                                 required
                             />
-                        </div>
-                        <div className="tel-input">
-                            <label htmlFor="_phone">Phone:</label>
-                            <Phone
-                                id="_phone"
-                                placeholder="Enter phone number"
-                                onChange={phone => this.setState({ phone })}
-                            />
-                        </div>
-                        <div className="note-input">
-                            <label id="notes_label" htmlFor="_notes">
-                                Notes:
-                            </label>
-                            <textarea id="_notes" rows="5" name="notes" />
                         </div>
                         <div
                             className="button"
                             type="submit"
                             id="continue-button"
+                            onClick={this.save}
                         >
                             Continue
                         </div>
@@ -106,4 +170,23 @@ class InfoDriver extends Component {
     }
 }
 
-export default InfoDriver;
+//Pull in the React Router context so router is available on this.context.router.
+InfoDriver.contextTypes = {
+    router: PropTypes.object
+};
+
+function mapStateToProps(state, ownProps) {
+    return {
+        trips: state.trips,
+        loggedin: state.loggedin,
+        accounts: state.accounts
+    };
+}
+
+function mapDispatchToProps(dispatch) {
+    return {
+        actions: bindActionCreators(tripActions, dispatch)
+    };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(InfoDriver);

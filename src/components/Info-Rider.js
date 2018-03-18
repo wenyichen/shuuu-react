@@ -56,10 +56,6 @@ class InfoRider extends Component {
                             <label htmlFor="_tel">Phone Number:</label>
                             <input type="tel" id="_tel" name="tel" value="" required/>
                         </div>
-                        <div className="note-input">
-                            <label id="notes_label" htmlFor="_notes">Notes:</label>
-                            <textarea id="_notes" rows="5" name="notes"></textarea>
-                        </div>
                         <div className="button" type="submit" id="continue-button">Continue</div>
                     </form>
                 </div>

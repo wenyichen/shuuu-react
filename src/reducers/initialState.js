@@ -4,5 +4,6 @@ export default {
     loggedin: false,
     uid: -1
   },
+  trips: [],
   ajaxCallsInProgress: 0
 };

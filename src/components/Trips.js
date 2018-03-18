@@ -1,162 +1,62 @@
 import React, { Component } from "react";
+import { PropTypes } from "prop-types";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 import "../css/main.css";
 import "../css/trips.css";
 import "../../node_modules/open-iconic/font/css/open-iconic-bootstrap.css";
+import * as accountActions from "../actions/accountActions";
 import Navbar from "../Common/Navbar";
 import Trip from "./Trip";
 
 class Trips extends Component {
-    constructor() {
-        super();
+    constructor(props, context) {
+        super(props, context);
     }
 
     render() {
+        var id = this.props.loggedin.uid;
+
+        for(var a of this.props.accounts) {
+            console.log(a);
+            if (a.id == id) {
+                var account = Object.assign({}, a);
+                break;
+            }
+        }
+
+        var trips = [];
+        for(var trip of this.props.trips) {
+            if (account.trips.includes(trip.id)) {
+                trips = [...trips,trip];
+            }
+        }
+
         return (
             <div>
                 <Navbar />
                 <div id="trips">
-                    {this.props.trips.map((trip, index) => <Trip key={index} trip={trip}/>)}
+                    {trips.map((trip, index) => (
+                        <Trip key={trip.id} trip={trip} />
+                    ))}
                 </div>
             </div>
         );
     }
 }
 
-Trips.defaultProps = {
-    trips: [
-        {
-            date: new Date().toDateString(),
-            depart: "LONG_ADDRESS1",
-            dest: "LONG_ADDRESS2",
-            status: "Ready",
-            driver: "DRIVER_NAME1",
-            chats: [
-                {
-                    date: new Date(),
-                    type: "notification",
-                    text: "Trip has been created!"
-                },
-                {
-                    date: new Date(),
-                    type: "notification",
-                    text: "You have been added to the trip (Driver)"
-                },
-                {
-                    date: new Date(),
-                    type: "notification",
-                    text: "James has requested to join the trip"
-                },
-                {
-                    date: new Date(),
-                    type: "notification",
-                    text: "You have approved James's request"
-                },
-                {
-                    date: new Date(),
-                    type: "notification",
-                    text: "James have been added to the trip"
-                },
-                {
-                    date: new Date(),
-                    type: "notification",
-                    text: "Sam has requested to join the trip"
-                },
-                {
-                    date: new Date(),
-                    type: "notification",
-                    text: "You have approved Sam's request"
-                },
-                {
-                    date: new Date(),
-                    type: "notification",
-                    text: "Sam have been added to the trip"
-                },
-                {
-                    date: new Date(),
-                    type: "message",
-                    text: "Hi!",
-                    user: "You"
-                },
-                {
-                    date: new Date(),
-                    type: "message",
-                    text: "Hello!",
-                    user: "James"
-                },
-                {
-                    date: new Date(),
-                    type: "todo",
-                    text: "Trip is scheduled for 1/19/19."
-                }
-            ]
-        },
-        {
-            date: new Date().toDateString(),
-            depart: "LONG_ADDRESS1",
-            dest: "LONG_ADDRESS2",
-            status: "Ready",
-            driver: "DRIVER_NAME1",
-            chats: [
-                {
-                    date: new Date(),
-                    type: "notification",
-                    text: "Trip has been created!"
-                },
-                {
-                    date: new Date(),
-                    type: "notification",
-                    text: "You have been added to the trip (Driver)"
-                },
-                {
-                    date: new Date(),
-                    type: "notification",
-                    text: "James has requested to join the trip"
-                },
-                {
-                    date: new Date(),
-                    type: "notification",
-                    text: "You have approved James's request"
-                },
-                {
-                    date: new Date(),
-                    type: "notification",
-                    text: "James have been added to the trip"
-                },
-                {
-                    date: new Date(),
-                    type: "notification",
-                    text: "Sam has requested to join the trip"
-                },
-                {
-                    date: new Date(),
-                    type: "notification",
-                    text: "You have approved Sam's request"
-                },
-                {
-                    date: new Date(),
-                    type: "notification",
-                    text: "Sam have been added to the trip"
-                },
-                {
-                    date: new Date(),
-                    type: "message",
-                    text: "Hi!",
-                    user: "You"
-                },
-                {
-                    date: new Date(),
-                    type: "message",
-                    text: "Hello!",
-                    user: "James"
-                },
-                {
-                    date: new Date(),
-                    type: "todo",
-                    text: "Trip is scheduled for 1/19/19."
-                }
-            ]
-        }
-    ]
+//Pull in the React Router context so router is available on this.context.router.
+Trips.contextTypes = {
+    router: PropTypes.object
 };
 
-export default Trips;
+function mapStateToProps(state, ownProps) {
+    return {
+        accounts: state.accounts,
+        loggedin: state.loggedin,
+        trips: state.trips
+    };
+}
+
+export default connect(mapStateToProps)(Trips);
+
