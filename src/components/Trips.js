@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import "./css/main.css";
-import "./css/trips.css";
-import "../node_modules/open-iconic/font/css/open-iconic-bootstrap.css";
-import Navbar from "./Common/Navbar";
+import "../css/main.css";
+import "../css/trips.css";
+import "../../node_modules/open-iconic/font/css/open-iconic-bootstrap.css";
+import Navbar from "../Common/Navbar";
 import Trip from "./Trip";
 
 class Trips extends Component {

@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import "./css/main.css";
-import "./css/search.css";
-import "../node_modules/open-iconic/font/css/open-iconic-bootstrap.css";
-import Navbar from "./Common/Navbar";
+import "../css/main.css";
+import "../css/search.css";
+import "../../node_modules/open-iconic/font/css/open-iconic-bootstrap.css";
+import Navbar from "../Common/Navbar";
 import Result from "./Result";
 
 class Search extends Component {

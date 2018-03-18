@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import './css/main.css';
-import './css/info.css';
-import Navbar from './Common/Navbar';
+import '../css/main.css';
+import '../css/info.css';
+import Navbar from '../Common/Navbar';
 import Autocomplete from 'react-google-autocomplete';
 
 class Autoaddress extends React.Component {

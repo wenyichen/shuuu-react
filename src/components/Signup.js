@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import './css/main.css';
-import './css/signup.css';
-import Navbar from './Common/Navbar';
+import '../css/main.css';
+import '../css/signup.css';
+import Navbar from '../Common/Navbar';
 
 class Signup extends Component {
     render() {

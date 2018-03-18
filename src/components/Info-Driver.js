@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import "./css/main.css";
-import "./css/info.css";
-import Navbar from "./Common/Navbar";
+import "../css/main.css";
+import "../css/info.css";
+import Navbar from "../Common/Navbar";
 import Autocomplete from "react-google-autocomplete";
 //import IntlTelInput from 'react-intl-tel-input';
 //import 'file?name=libphonenumber.js!./node_modules/react-intl-tel-input/dist/libphonenumber.js';

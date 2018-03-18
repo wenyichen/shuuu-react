@@ -1,13 +1,13 @@
-import Main from './Main';
-import Start from './Start';
-import Signup from './Signup';
-import Search from './Search';
-import Login from './Login';
-import InfoRider from './Info-Rider';
-import InfoDriver from './Info-Driver';
-import Account from './Account';
-import Account_Edit from './Account_Edit';
-import Trips from './Trips';
+import Main from './components/Main';
+import Start from './components/Start';
+import Signup from './components/Signup';
+import Search from './components/Search';
+import Login from './components/Login';
+import InfoRider from './components/Info-Rider';
+import InfoDriver from './components/Info-Driver';
+import Account from './components/Account';
+import Account_Edit from './components/Account_Edit';
+import Trips from './components/Trips';
 
 const routes = [{
     path: '/',

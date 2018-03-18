@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import "./css/main.css";
-import "./css/trips.css";
+import "../css/main.css";
+import "../css/trips.css";
 import Message from "./Message";
 
 class Trip extends Component {
