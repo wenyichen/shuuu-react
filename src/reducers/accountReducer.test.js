@@ -1,6 +1,6 @@
 import expect from 'expect';
-import accountReducer from './Account-Reducer';
-import * as actions from './Account-Actions';
+import accountReducer from './accountReducer';
+import * as actions from './accountActions';
 
 describe('Account Reducer', () => {
   it('should add account when passed CREATE_ACCOUNT_SUCCESS', () => {
@@ -27,7 +27,7 @@ describe('Account Reducer', () => {
   it('should update account when passed UPDATE_ACCOUNT_SUCCESS', () => {
     // arrange
     const initialState = [
-      {name: 'John', tel: '1234567890'}
+      {name: 'John', tel: '1234567890'},
       {name: 'Justin', tel: '1111111111'}
     ];
 
