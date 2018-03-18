@@ -1,4 +1,4 @@
-import * as types from './Action-Types';
+import * as types from './accountTypes';
 import accountapi from '../api/mockAccountApi';
 import {beginAjaxCall, ajaxCallError} from './ajaxStatusActions';
 
