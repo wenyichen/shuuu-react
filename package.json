@@ -12,6 +12,9 @@
     "babel-preset-stage-0": "^6.24.1",
     "bootstrap": "^4.0.0",
     "create-react-app": "^1.5.2",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "expect": "^22.4.0",
     "jquery": "^3.3.1",
     "open-iconic": "^1.1.1",
     "popper.js": "^1.13.0",
@@ -19,12 +22,13 @@
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-google-autocomplete": "^1.0.15",
-    "react-intl-tel-input": "^4.3.4",
+    "react-intl-tel-input": "^5.0.1",
     "react-phone-number-input": "^0.17.1",
     "react-redux": "^5.0.7",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
-    "react-scripts": "1.1.1"
+    "react-scripts": "1.1.1",
+    "react-test-renderer": "^16.2.0"
   },
   "scripts": {
     "predeploy": "npm run build",
@@ -38,8 +42,7 @@
     "gh-pages": "^1.1.0",
     "jsdom": "^11.6.2",
     "mocha": "^5.0.1",
-    "react-addons-test-utils": "^15.6.2",
-    "webpack": "^4.1.1",
-    "webpack-dev-server": "^3.1.0"
+    "webpack": "^3.11.0",
+    "webpack-dev-server": "^2.11.2"
   }
 }

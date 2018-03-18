@@ -32,5 +32,14 @@ export const VisibilityFilters = {
    return { type: SET_VISIBILITY_FILTER, filter }
  }
 
-
- 
+//add trip
+export function addTrip (trip) {
+    return { type: ADD_TRIP}
+}
+//set trip status
+//remove trip
+//edit trip?
+//add user
+//edit user
+//set logged in
+//set logout
